@@ -18,6 +18,10 @@ export class HttpService {
     return this.http.get(this.urlAPI+url+`?api_key=${this.apiKey}`)
   }
 
+  getMovieById(url, id){
+    return this.http.get(this.urlAPI+url+id+`?api_key=${this.apiKey}`)
+  }
+
   lookingFor(url, query){
     return this.http.get(this.urlAPI+url+`?api_key=${this.apiKey}&query=${query}`)
   }
