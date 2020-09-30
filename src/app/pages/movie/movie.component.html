@@ -12,14 +12,13 @@
                 <h1>{{title}}</h1>
                 <h3>{{tagline}}</h3>
                 <h4>{{vote_average}}/10 ranked</h4>
-                <div>
-                        <button type="button" class="btn btn-outline-default btn-round">{{genre[0].name}}</button>
-                        <button type="button" class="btn btn-outline-default btn-round">{{genre[1].name}}</button>
-                        <button type="button" class="btn btn-outline-default btn-round">{{genre[2].name}}</button>
+                <div >
+                        <button type="button" class="btn btn-outline-neutral btn-round">{{genre1}}</button>
+                        <button type="button" class="btn btn-outline-neutral btn-round">{{genre2}}</button>
                 </div>
                 <h5>{{description}}</h5>
                 <br />
-                <button type="button" (click)="setFavorite()" class="btn btn-danger btn-just-icon" placement="bottom" ngbTooltip="Add to my Favorite's List"><i class="fa fa-heart"></i></button>
+                <button type="button" (click)="favorite()" class="btn btn-danger btn-just-icon" placement="bottom" ngbTooltip="Add to my Favorite's List"><i class="fa fa-heart"></i></button>
                 <button type="button" [routerLink]="['/home']" class="btn btn-outline-neutral btn-round">Return Home</button>
             </div>
         </div>

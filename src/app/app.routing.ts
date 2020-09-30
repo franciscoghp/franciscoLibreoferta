@@ -11,13 +11,15 @@ import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.compo
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
 import { MovieComponent } from './pages/movie/movie.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home',             component: HomeComponent },
-    { path: 'serie/:id',            component: MovieComponent },
+    { path: 'serie/:id',        component: MovieComponent },
     { path: 'movie/:id',        component: MovieComponent },
-    { path: 'search',          component: SearchComponent }
+    { path: 'search',           component: SearchComponent },
+    { path: 'favorites',        component: FavoritesComponent }
 ];
 
 @NgModule({

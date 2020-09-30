@@ -37,7 +37,7 @@
                                     <div class="carousel-caption">
                                         <p>{{movie.title}}</p>
                                     </div>
-                                    <img [src]="baseImagePath+movie.backdrop_path" alt="movie.title">
+                                    <img [routerLink]="['/movie',movie.id]" [src]="baseImagePath+movie.backdrop_path" alt="movie.title">
                                 </ng-template>
                             </ngb-carousel>                        
                         </div>

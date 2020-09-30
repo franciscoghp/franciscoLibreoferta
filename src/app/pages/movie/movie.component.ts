@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FavoritesService } from 'app/services/favorites.service';
 import { HttpService } from 'app/services/http.service';
 
 @Component({
@@ -16,17 +17,24 @@ export class MovieComponent implements OnInit {
   description;
   poster;
   tagline;
-  genre: any[]
+  genre1;
+  genre2;
   vote_average;
+  type;
 
   constructor(private route: ActivatedRoute,
-              private http : HttpService) {
+              private http : HttpService,
+              private favoriteService: FavoritesService) {
     this.id = this.route.snapshot.params.id;
     console.log(this.id);
+    this.type = window.location.pathname;
+    this.type = this.type.slice(1,6)
+    console.log(this.type);
 }
 
   ngOnInit(): void {
-    this.http.getMovieById('/movie/', this.id)
+    if( this.type === 'movie'){
+    this.http.getSelectedById('/movie/',this.id)
       .subscribe( (data: any) => {
         console.log(data);
 
@@ -40,10 +48,36 @@ export class MovieComponent implements OnInit {
         
         this.tagline = data.tagline;
 
-        this.genre = data.genres;
+        this.genre1 = data.genres[0].name
+        this.genre2= data.genres[1].name
 
         this.vote_average = data.vote_average
       } )
+    }else{
+      this.http.getSelectedById('/tv/',this.id)
+      .subscribe( (data: any) => {
+        console.log(data);
+
+        this.image = data.backdrop_path
+
+        this.title = data.name;
+
+        this.description = data.overview;
+
+        this.poster = data.poster_path;
+        
+        this.tagline = data.tagline;
+
+        this.genre1 = data.genres[0].name
+        this.genre2= data.genres[1].name
+
+        this.vote_average = data.vote_average
+      } )
+    }
+  }
+
+  favorite(){
+    this.favoriteService.setFavorite(this.id, this.type)
   }
 
 }
