@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-carousel',
@@ -6,10 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carousel.component.css']
 })
 export class CarouselComponent implements OnInit {
+  fila
+  peliculas
+  flechaIzquierda
+  flechaDerecha
+  baseImagePath = "https://image.tmdb.org/t/p/original";
 
   constructor() { }
+  @Input() movies: [];
+  @Input() selector: string;
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  moveRight() {
+    this.fila = document.querySelector('.'+this.selector);
+    this.fila.scrollLeft += this.fila.offsetWidth;
   }
 
+  moveLeft() {
+    this.fila = document.querySelector('.'+this.selector);
+    this.fila.scrollLeft -= this.fila.offsetWidth;
+  }
 }

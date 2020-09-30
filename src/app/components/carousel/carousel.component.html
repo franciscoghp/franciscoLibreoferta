@@ -1,1 +1,34 @@
-<p>carousel works!</p>
+<div class="container">
+  <div class="row p-relative">
+
+    <button role="button"
+            id="flecha-izquierda"
+            class="flecha-izquierda"
+            (click)="moveLeft()">
+              <i class="fas fa-angle-left"></i>
+    </button>
+    <div class="peliculas-recomendadas contenedor"
+         [ngClass]="{'movie' : selector == 'movie', 'serie': selector == 'serie'}"
+         [id]="selector">
+
+			<div class="contenedor-principal">
+
+        <div class="contenedor-carousel">
+          <div class="carousel">
+            <div class="pelicula" *ngFor="let movie of movies">
+              <img [routerLink]="['/'+selector,movie.id]" [src]="baseImagePath+movie.backdrop_path" class="img-carousel">
+            </div>
+          </div>
+        </div>
+      
+      </div>
+    </div>
+    <button role="button"
+            id="flecha-derecha"
+            class="flecha-derecha"
+            (click)="moveRight()">
+              <i class="fas fa-angle-right"></i>
+    </button>
+
+  </div>
+</div>

@@ -37,6 +37,6 @@ import { CarouselComponent } from './carousel/carousel.component';
         CarouselComponent
     ],
     entryComponents: [NgbdModalContent],
-    exports:[ ComponentsComponent ]
+    exports:[ ComponentsComponent, CarouselComponent ]
 })
 export class ComponentsModule { }
