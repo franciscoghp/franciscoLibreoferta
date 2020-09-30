@@ -19,7 +19,7 @@
                 </div>
                 <h5>{{description}}</h5>
                 <br />
-                <button type="button" class="btn btn-danger btn-just-icon" placement="bottom" ngbTooltip="Add to my Favorite's List"><i class="fa fa-heart"></i></button>
+                <button type="button" (click)="setFavorite()" class="btn btn-danger btn-just-icon" placement="bottom" ngbTooltip="Add to my Favorite's List"><i class="fa fa-heart"></i></button>
                 <button type="button" [routerLink]="['/home']" class="btn btn-outline-neutral btn-round">Return Home</button>
             </div>
         </div>

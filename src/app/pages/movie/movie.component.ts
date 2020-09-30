@@ -41,10 +41,6 @@ export class MovieComponent implements OnInit {
         this.tagline = data.tagline;
 
         this.genre = data.genres;
-        console.log(this.genre[0].name);
-        console.log(this.genre[1]);
-        console.log(this.genre[2]);
-
 
         this.vote_average = data.vote_average
       } )
