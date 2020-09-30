@@ -15,7 +15,7 @@ import { MovieComponent } from './pages/movie/movie.component';
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home',             component: HomeComponent },
-    { path: 'movie',            component: MovieComponent },
+    { path: 'serie/:id',            component: MovieComponent },
     { path: 'movie/:id',        component: MovieComponent },
     { path: 'search',          component: SearchComponent }
 ];
