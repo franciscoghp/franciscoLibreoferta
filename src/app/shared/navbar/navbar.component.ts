@@ -12,6 +12,7 @@ import { HttpService } from 'app/services/http.service';
 export class NavbarComponent implements OnInit {
 
     searchForm: FormGroup;
+    loading: boolean = false;
 
     // private toggleButton: any;
     private sidebarVisible: boolean;
@@ -23,9 +24,11 @@ export class NavbarComponent implements OnInit {
                 private router: Router,
                 private httpService: HttpService) {
         this.sidebarVisible = false;
+        
     }
 
     ngOnInit() {
+        
         const navbar: HTMLElement = this.element.nativeElement;
         // this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
         this.searchForm = this.formBuilder.group({
@@ -87,22 +90,20 @@ export class NavbarComponent implements OnInit {
     }
 
     onSubmit(){
+        this.loading = true
+        setTimeout(() => {
+            this.loading = false
+        }, 2000);
+
        const search = this.searchForm.value.search
        console.log(search);
 
         // Procedimiento para dirigirnos a la pagina de "Search"
         // y enviar el input que querenos y nos interesa
        this.httpService.setSearching(search)
+       
        this.router.navigate(['/search']);
-       this.httpService.getSearching();
-
-    //    if(this.router.url === '/search'){
-    //        window.location.reload();
-    //    }else{
-    //        this.router.navigate(['/search']);
-    //    }
-       
-       
+       this.httpService.getSearching();       
        
     }
 }

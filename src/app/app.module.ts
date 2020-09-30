@@ -17,7 +17,8 @@ import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common
 import { SearchComponent } from './pages/search/search.component';
 import { WavesModule, InputsModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MovieComponent } from './pages/movie/movie.component'
+import { MovieComponent } from './pages/movie/movie.component';
+import { FavoritesComponent } from './pages/favorites/favorites.component'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MovieComponent } from './pages/movie/movie.component'
     FooterComponent,
     HomeComponent,
     SearchComponent,
-    MovieComponent
+    MovieComponent,
+    FavoritesComponent
   ],
   imports: [
     BrowserModule,

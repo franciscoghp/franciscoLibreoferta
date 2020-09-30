@@ -1,0 +1,15 @@
+.francisco {
+    width: 280px;
+    height: auto;  
+    overflow: visible;
+    white-space:nowrap;
+}
+
+.francisco .slide {
+    display: inline-block;
+}
+
+.sizeImage{
+    width: 280px;
+    height: auto;
+}

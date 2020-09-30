@@ -1,14 +1,14 @@
 <div class="section section-dark text-center">
     <div class="container">
-        <h2 class="title">Resultados de la Búsqueda "{{httpService.search}}"</h2>
+        <h2 class="title">Results from the Searching "{{httpService.search}}"</h2>
         <div class="row">
             <div *ngFor="let resultado of httpService.searchResult" class="col-md-4">
                 <div class="card card-profile card-plain">
                     <div class="card-avatar">
-                        <a href="#avatar"><img [src]="baseImagePath+resultado.poster_path" alt="..."></a>
+                        <a [routerLink]="['/movie', resultado.id]"><img [src]="baseImagePath+resultado.poster_path" alt="..."></a>
                     </div>
                     <div class="card-block">
-                        <a href="#paper-kit">
+                        <a [routerLink]="['/movie', resultado.id]">
                             <div class="author">
                                 <h4 class="card-title">{{resultado.title}}</h4>
                                 <h6 class="card-category">Release Date  {{resultado.release_date}}</h6>
