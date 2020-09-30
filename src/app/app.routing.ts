@@ -10,14 +10,14 @@ import { LandingComponent } from './examples/landing/landing.component';
 import { NucleoiconsComponent } from './components/nucleoicons/nucleoicons.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SearchComponent } from './pages/search/search.component';
+import { MovieComponent } from './pages/movie/movie.component';
 
 const routes: Routes =[
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     { path: 'home',             component: HomeComponent },
-    { path: 'user-profile',     component: ProfileComponent },
-    { path: 'signup',           component: SignupComponent },
-    { path: 'search',          component: SearchComponent },
-    { path: 'nucleoicons',      component: NucleoiconsComponent }
+    { path: 'movie',            component: MovieComponent },
+    { path: 'movie/:id',        component: MovieComponent },
+    { path: 'search',          component: SearchComponent }
 ];
 
 @NgModule({

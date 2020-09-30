@@ -16,7 +16,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SearchComponent } from './pages/search/search.component';
 import { WavesModule, InputsModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MovieComponent } from './pages/movie/movie.component'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations'
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    SearchComponent
+    SearchComponent,
+    MovieComponent
   ],
   imports: [
     BrowserModule,

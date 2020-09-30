@@ -1,12 +1,12 @@
 <div class="wrapper">
-    <div class="page-header section-dark" [ngStyle]="{'background-image': 'url('+baseImagePath+image+')'}">
-        <div class="filter"></div>
+    <div class="page-header section-dark" [routerLink]="['/movie', id]"  [ngStyle]="{'background-image': 'url('+baseImagePath+image+')'}">
+        
             <div class="content-center">
                 <div class="container">
                     <div class="title-brand">
                         
                         <h1 class="presentation-title">{{title}}</h1>
-                        <h1 class="presentation-subtitle">Más Popular Hoy</h1>
+                        <h1 class="presentation-subtitle">Más Popular de la Semana</h1>
                         <ngb-progressbar type="success" [value]="voteAverage*10">{{voteAverage}}</ngb-progressbar><br>
                         
                     </div>
@@ -27,7 +27,7 @@
                                     <div class="carousel-caption">
                                         <p>{{movie.title}}</p>
                                     </div>
-                                    <img [src]="baseImagePath+movie.backdrop_path" alt="movie.title">
+                                    <img [routerLink]="['/movie', movie.id]" [src]="baseImagePath+movie.backdrop_path" alt="movie.title">
                                 </ng-template>
                             </ngb-carousel>                        
                         </div>

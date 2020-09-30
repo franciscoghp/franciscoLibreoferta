@@ -7,8 +7,10 @@ import { HttpService } from 'app/services/http.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   baseImagePath = "https://image.tmdb.org/t/p/original"
   image: string;
+  id;
   title: string;
   voteAverage: number;
   movies;
@@ -45,6 +47,10 @@ export class HomeComponent implements OnInit {
         // Imagen de la pelicula mas popular para el Home
         this.image = peliculasOrdenadas[0].backdrop_path
         console.log(this.image);
+
+        // Id de la pelicula mas popular para el Home
+        this.id = peliculasOrdenadas[0].id
+        console.log(this.id);
     
   }) 
   
