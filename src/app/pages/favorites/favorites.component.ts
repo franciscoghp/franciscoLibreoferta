@@ -10,17 +10,15 @@ export class FavoritesComponent implements OnInit {
 
   baseImagePath = "https://image.tmdb.org/t/p/original"
 
-  //favorites;
-
   constructor(public favoriteService: FavoritesService) { }
 
   ngOnInit(): void {
-    //this.favorites = this.favoriteService.getFavorite()
-    //console.log(this.favorites);
   }
 
   remove(id){
     this.favoriteService.favorites = this.favoriteService.favorites.filter( (removed) => removed.id != id)
+    
+    //Envio hacia localStorage de la peliocula que fue añadida a la lista de Favoritos
     localStorage.setItem('myList', JSON.stringify(this.favoriteService.favorites))   
     return this.favoriteService.favorites = this.favoriteService.favorites.filter( (removed) => removed.id != id)
   }

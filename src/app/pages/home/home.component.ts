@@ -17,10 +17,8 @@ export class HomeComponent implements OnInit {
   series;
   movies4;
 
-  // [routerLink]="['/movie', movie.id]"
-
   constructor(private http : HttpService) {
-    // Consulta Http para obetener las peliculas mas populares
+
     this.http.get('/trending/movie/week')
       .subscribe( (data: any) => {
         console.log(data);
@@ -101,11 +99,7 @@ export class HomeComponent implements OnInit {
 
         // Voto Promedio de la pelicula mas popular para el Home  
         this.voteAverage = peliculasAclamadas[0].vote_average
-    
-  }) 
-
-    
-
+  })
   }
 
   ngOnInit(): void {}

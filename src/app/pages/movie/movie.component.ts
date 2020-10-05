@@ -17,8 +17,7 @@ export class MovieComponent implements OnInit {
   description;
   poster;
   tagline;
-  genre1;
-  genre2;
+  genre;
   vote_average;
   type;
 
@@ -28,7 +27,7 @@ export class MovieComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     console.log(this.id);
     this.type = window.location.pathname;
-    this.type = this.type.slice(1,6)
+    this.type = this.type.slice(22,27)
     console.log(this.type);
 }
 
@@ -48,8 +47,7 @@ export class MovieComponent implements OnInit {
         
         this.tagline = data.tagline;
 
-        this.genre1 = data.genres[0].name
-        this.genre2= data.genres[1].name
+        this.genre = data.genres[0].name
 
         this.vote_average = data.vote_average
       } )
@@ -68,8 +66,7 @@ export class MovieComponent implements OnInit {
         
         this.tagline = data.tagline;
 
-        this.genre1 = data.genres[0].name
-        this.genre2= data.genres[1].name
+        this.genre = data.genres[0].name
 
         this.vote_average = data.vote_average
       } )

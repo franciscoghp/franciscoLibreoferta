@@ -10,7 +10,6 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
 import { ComponentsModule } from './components/components.module';
-import { ExamplesModule } from './examples/examples.module';
 import { HomeComponent } from './pages/home/home.component';
 
 import { HttpClient, HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -19,6 +18,7 @@ import { WavesModule, InputsModule, ButtonsModule, MDBBootstrapModule } from 'an
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MovieComponent } from './pages/movie/movie.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component'
+
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { FavoritesComponent } from './pages/favorites/favorites.component'
     FormsModule,
     RouterModule,
     ComponentsModule,
-    ExamplesModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,

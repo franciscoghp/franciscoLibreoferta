@@ -17,27 +17,9 @@ export class SearchComponent implements OnInit {
   resultados;
 
   constructor( 
-    public httpService: HttpService,
-    private router: Router
-    ) {
-
-    // const search = this.httpService.getSearching()
-
-    // this.busquedad = search;
-    // console.log(search);
-    
-
-    // this.httpService.lookingFor('/search/movie',search )
-    //     .subscribe( (data:any) =>{
-    //         console.log(data);
-            
-    //         this.resultados = data.results
-    //     })
-   }
+    public httpService: HttpService) {}
 
   ngOnInit(): void {
-    console.log(this.httpService.searchResult);
-    
   }
 
 }
